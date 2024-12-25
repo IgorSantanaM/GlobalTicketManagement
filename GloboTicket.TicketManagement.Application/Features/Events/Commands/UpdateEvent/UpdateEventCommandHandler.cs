@@ -6,7 +6,7 @@ using MediatR;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent
 {
-    public class UpdateEventCommandHandler : IRequestHandler<UpdateEventCommand>
+    public class UpdateEventCommandHandler : IRequestHandler<UpdateEventCommand, Unit>
     {
         private readonly IAsyncRepository<Event> _eventRepository;
         private readonly IMapper _mapper;
@@ -19,7 +19,6 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Upda
 
         public async Task<Unit> Handle(UpdateEventCommand request, CancellationToken cancellationToken)
         {
-
             var eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
             if (eventToUpdate == null)
             {
@@ -27,10 +26,12 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Upda
             }
 
             var validator = new UpdateEventCommandValidator();
-            var validationResult = await validator.ValidateAsync(request);
+            var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (validationResult.Errors.Count > 0)
+            {
                 throw new ValidationException(validationResult);
+            }
 
             _mapper.Map(request, eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
 
