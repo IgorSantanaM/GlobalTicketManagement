@@ -6,7 +6,7 @@ using MediatR;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.DeleteEvent
 {
-    public class DeleteEventCommandHandler : IRequestHandler<DeleteEventCommand>
+    public class DeleteEventCommandHandler : IRequestHandler<DeleteEventCommand, Unit>
     {
         private readonly IAsyncRepository<Event> _eventRepository;
         private readonly IMapper _mapper;
@@ -30,5 +30,6 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Dele
 
             return Unit.Value;
         }
+
     }
 }
