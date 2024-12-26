@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using System.Reflection.Metadata;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent
 {
