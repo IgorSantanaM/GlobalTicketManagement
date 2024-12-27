@@ -1,17 +1,12 @@
 ﻿using GloboTicket.TicketManagement.Application.Contracts.Persistence;
-using GloboTicket.TicketManagement.Persistence.Repositories;
+using GloboTicket.TicketManagement.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GloboTicket.TicketManagement.Persistence
+namespace GloboTicket.TicketManagement.Infrastructure
 {
-    public static class PersistenceServiceRegistration
+    public static class PersistenceRegistration
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
@@ -26,6 +21,6 @@ namespace GloboTicket.TicketManagement.Persistence
 
             return services;
         }
-    }
 
+    }
 }

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GloboTicket.TicketManagement.Application.Contracts.Infrastructure;
 using GloboTicket.TicketManagement.Application.Contracts.Persistence;
-using GloboTicket.TicketManagement.Application.Models.Mail;
+using GloboTicket.TicketManagement.Application.Features.Models.Mail;
 using GloboTicket.TicketManagement.Domain.Entities;
 using MediatR;
 

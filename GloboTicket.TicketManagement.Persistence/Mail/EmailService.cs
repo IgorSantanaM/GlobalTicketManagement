@@ -1,14 +1,14 @@
-﻿using GloboTicket.TicketManagement.Application.Contracts.Infrastructure;
-using GloboTicket.TicketManagement.Application.Models.Mail;
-using Microsoft.Extensions.Options;
-using SendGrid.Helpers.Mail;
+﻿using SendGrid.Helpers.Mail;
 using SendGrid;
+using GloboTicket.TicketManagement.Application.Features.Models.Mail;
+using Microsoft.Extensions.Options;
+using GloboTicket.TicketManagement.Application.Contracts.Infrastructure;
 
-namespace ClassLibrary1GloboTicket.TicketManagement.Infrastructure.Mail
+namespace GloboTicket.TicketManagement.Persistence.Mail
 {
     public class EmailService : IEmailService
     {
-        public EmailSettings _emailSettings { get; }
+        public EmailSettings _emailSettings { get; }    
 
         public EmailService(IOptions<EmailSettings> mailSettings)
         {

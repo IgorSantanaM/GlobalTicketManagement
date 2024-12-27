@@ -4,10 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GloboTicket.TicketManagement.Persistence
+namespace GloboTicket.TicketManagement.Infrastructure
 {
     public class GloboTicketDbContext : DbContext
     {
@@ -202,5 +203,6 @@ namespace GloboTicket.TicketManagement.Persistence
             }
             return base.SaveChangesAsync(cancellationToken);
         }
+
     }
 }
