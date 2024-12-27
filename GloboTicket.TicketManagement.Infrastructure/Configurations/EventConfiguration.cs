@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GloboTicket.TicketManagement.Persistence.Configurations
+namespace GloboTicket.TicketManagement.Infrastructure.Configurations
 {
     internal class EventConfiguration
     {
     }
-}
+} 

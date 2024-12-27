@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GloboTicket.TicketManagement.Persistence.Repositories
+namespace GloboTicket.TicketManagement.Infrastructure.Repositories
 {
     public class EventRepository : BaseRepository<Event>, IEventRepository
     {
@@ -18,6 +18,6 @@ namespace GloboTicket.TicketManagement.Persistence.Repositories
             var matches = _dbContext.Events.Any(e => e.Name.Equals(name) && e.Date.Date.Equals(eventDate.Date));
             return Task.FromResult(matches);
         }
-    }
 
+    }
 }
