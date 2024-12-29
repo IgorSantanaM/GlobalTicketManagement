@@ -1,6 +1,7 @@
 ﻿
 using GloboTicket.TicketManagement.Application.Contracts.Infrastructure;
 using GloboTicket.TicketManagement.Application.Features.Models.Mail;
+using GloboTicket.TicketManagement.Persistence.FileExporter;
 using GloboTicket.TicketManagement.Persistence.Mail;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,8 @@ namespace GloboTicket.TicketManagement.Persistence
         {
             //services.Configure<EmailSettings>(configuration.GetSection("EmailService"));
 
+
+            services.AddTransient<ICsvExporter, CsvExporter>();
             services.AddTransient<IEmailService, EmailService>();
 
             return services;
