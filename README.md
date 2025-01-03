@@ -63,7 +63,7 @@ This project follows the **5 principles of architecture**:
 
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/yourusername/yourproject.git  
+   git clone https://github.com/igorsantanam/CleanArchitectureAspNet8.git  
    cd yourproject
    ```
 2. Restore dependencies:
